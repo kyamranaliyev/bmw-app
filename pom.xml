@@ -8,7 +8,7 @@
 	
 	<version>0.0.2</version> 
 	
-	<name>tesla1m</name>
+	<name>maven-web-application</name>
 
 	<description>Maven Web Project for Java Project</description>
 
@@ -108,7 +108,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla1m</finalName>
+		<finalName>dev-branch-tesla-app</finalName>
 		
 		<plugins>
 			<plugin>
