@@ -108,7 +108,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla1m</finalName>
+		<finalName>bug-fix-tesla-app</finalName>
 		
 		<plugins>
 			<plugin>
