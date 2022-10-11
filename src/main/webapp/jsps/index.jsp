@@ -141,7 +141,20 @@
     </div>
 </section>
 
-
+<section data-bs-version="5.1" class="content6 cid-tisLhuHbtG" id="content6-i">
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <hr class="line">
+                <p class="mbr-text align-center mbr-fonts-style my-4 display-5">
+                	<em>We have the best Engineers at Landmark Technologies&nbsp; and above all,</em><br><em>We put <strong>GOD</strong> FIRST.</em>
+                </p>
+                <hr class="line">
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <section data-bs-version="5.1" class="form1 cid-tis1eJtHpx mbr-parallax-background" id="form1-e">
