@@ -1,37 +1,38 @@
-pipeline{
-  agent any 
-  tools {
+pipeline {
+    agent any
+    tools{
     maven "maven.3.8.6"
-  }  
-  stages {
-    stage('1GetCode'){
-      steps{
-        sh "echo 'cloning the latest application version' "
-        git branch: 'bug_fix', url: 'https://github.com/kyamranaliyev/multi-pipeline'
-}
+    }
+    stages{
+        stage('1SCM'){
+        steps{
+            sh 'echo "bmw latest version"'
+            git branch: 'dev', url: 'https://github.com/kyamranaliyev/bmw-app'
+        }
     }
     stage('2Test+Build'){
-      steps{
-        sh "echo 'running JUnit-test-cases' "
-        sh "echo 'testing must passed to create artifacts ' "
-        sh "mvn clean package"
-      }
+        steps{
+            sh 'echo "running test cases"'
+            sh "mvn clean install"
+        }
     }
-    stage('3CodeQuality'){
-      steps{
-        sh "echo 'Perfoming CodeQualityAnalysis' "
-        sh "mvn sonar:sonar"
-      }
-    } 
-    stage('4uploadNexus'){
-      steps{
-        sh "mvn deploy"
-      }
-    }  
-    stage('5deploy2prod'){
-      steps{
-      deploy adapters: [tomcat9(credentialsId: 'tomcat-abc-cred', path: '', url: 'http://52.91.90.162:8080/')], contextPath: null, war: 'target/*war'
-}
-}
+   stage('3CodeQuality'){
+        steps{
+            sh 'echo "performing code quality analysis"'
+            sh "mvn sonar:sonar"
+        }
+   }
+   stage('4Upload2Nexus'){
+        steps{
+            sh 'echo "uploading artifacts to artifactory"'
+            sh "mvn deploy"
+        }
+   }
+   stage('5Deploy2prod'){
+        steps{
+            sh 'echo "deploying to UAT"'
+            deploy adapters: [tomcat9(credentialsId: 'tomcat-abc-cred', path: '', url: 'http://54.91.99.189:8080/')], contextPath: null, war: 'target/*war'
+        }
+   }
 }
 }
