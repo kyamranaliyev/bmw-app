@@ -96,19 +96,19 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.28.39:8081/repository/dev-tesla-releases/</url>
+	      <url>http://172.31.28.39:8081/repository/bmw-dev-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.28.39:8081/repository/dev-tesla-snapshots/</url>
+	      <url>http://172.31.28.39:8081/repository/bmw-dev-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>dev-branch-tesla-app</finalName>
+		<finalName>bmw-dev-app</finalName>
 		
 		<plugins>
 			<plugin>
