@@ -7,7 +7,7 @@ pipeline {
         stage('1SCM'){
         steps{
             sh 'echo "bmw latest version"'
-            git branch: 'dev', url: 'https://github.com/kyamranaliyev/bmw-app'
+            git branch: 'bug_fix', url: 'https://github.com/kyamranaliyev/bmw-app'
         }
     }
     stage('2Test+Build'){
